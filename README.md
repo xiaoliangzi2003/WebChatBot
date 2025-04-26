@@ -15,6 +15,10 @@
   - 使用DeepSeek API智能生成对话标题
   - 侧边栏显示历史记录，点击可继续之前的对话
   - 对话记录按最近更新时间排序
+- **Markdown渲染支持**：
+  - 机器人回复支持Markdown格式渲染
+  - 支持代码块语法高亮
+  - 优化列表、引用、链接等Markdown元素样式
 
 ## 技术栈
 
@@ -22,6 +26,7 @@
 - **后端**: Python, Flask
 - **API**: DeepSeek API
 - **存储**: JSON文件系统
+- **扩展**: Markdown-it, Highlight.js
 
 ## 安装
 
