@@ -89,6 +89,10 @@ body {
     display: flex;
     align-items: center;
     transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .sidebar-chat:hover {
@@ -102,6 +106,21 @@ body {
 .sidebar-chat i {
     margin-right: 10px;
     color: #8e8e8e;
+    flex-shrink: 0;
+}
+
+.sidebar-chat span {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-chat .chat-date {
+    color: #8e8e8e;
+    font-size: 0.75rem;
+    margin-left: 5px;
+    flex-shrink: 0;
 }
 
 .sidebar-footer {
@@ -322,10 +341,7 @@ body {
 #send-button.waiting {
     cursor: not-allowed;
     color: #10a37f;
-}
-
-#user-input:disabled {
-    cursor: not-allowed;
+    pointer-events: none; /* 添加这一行来防止点击 */
 }
 
 .input-footer {

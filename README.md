@@ -10,12 +10,18 @@
 - 打字中动画效果
 - 防止用户在机器人思考时发送新消息
 - 简洁的侧边栏设计
+- **聊天历史记录功能**：
+  - 自动保存所有对话到JSON文件
+  - 使用DeepSeek API智能生成对话标题
+  - 侧边栏显示历史记录，点击可继续之前的对话
+  - 对话记录按最近更新时间排序
 
 ## 技术栈
 
 - **前端**: HTML, CSS, JavaScript
 - **后端**: Python, Flask
 - **API**: DeepSeek API
+- **存储**: JSON文件系统
 
 ## 安装
 
@@ -24,7 +30,7 @@
 3. 安装依赖
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/xiaoliangzi2003/WebChatBot.git
 cd deepseek-chatbot
 python -m venv venv
 .\venv\Scripts\activate  # Windows
@@ -50,6 +56,8 @@ python server.py
 
 3. 开始与DeepSeek AI聊天!
 
+4. 聊天记录将自动保存，可在左侧边栏查看和继续之前的对话
+
 ## 项目结构
 
 ```
@@ -58,6 +66,8 @@ deepseek-chatbot/
 ├── main.py             # DeepSeek API交互
 ├── requirements.txt    # 依赖项
 ├── .env                # 环境变量(API密钥)
+├── history/            # 聊天历史记录存储目录
+│   └── .gitkeep        # Git占位文件
 ├── templates/          # HTML模板
 │   └── index.html      # 主页面
 └── static/             # 静态文件
@@ -66,6 +76,13 @@ deepseek-chatbot/
     └── js/
         └── script.js   # 客户端脚本
 ```
+
+## 聊天历史功能说明
+
+- **自动保存**: 每次对话自动保存为JSON文件
+- **智能命名**: 使用AI自动为对话生成描述性标题
+- **历史浏览**: 在左侧边栏浏览所有历史对话
+- **继续对话**: 点击历史记录可恢复并继续之前的对话
 
 ## 截图
 
